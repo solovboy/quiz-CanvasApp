@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="game.css" />
+    <title>Викторина по мифологиям</title>
+  </head>
+  <body>
+    <div class="quiz">
+      <div id="title" class="quiz__title">Мировые мифологии</div>
+      <div class="quiz__progress-wrap">
+        <div class="quiz__progress">
+          <div id="progress-fill" class="quiz__progress-fill"></div>
+        </div>
+        <div class="quiz__progress-questions">
+          <strong id="question-number">1</strong>
+          <span>/</span>
+          <span id="total-questions">10</span>
+        </div>
+      </div>
+      <div class="quiz__question">
+        <span id="question">Как программировать?</span>
+      </div>
+      <div id="answers" class="quiz__answers">
+        <div class="quiz__answer quiz__answer_valid">Вариант 1</div>
+        <div class="quiz__answer">Вариант 2</div>
+        <div class="quiz__answer quiz__answer_invalid">Вариант 3</div>
+        <div class="quiz__answer">Вариант 4</div>
+      </div>
+      <button id="next" class="quiz__button">Следующий вопрос</button>
+    </div>
+    <script src="data/questions.js"></script>
+    <script src="game.js"></script>
+  </body>
+</html>
