@@ -10,7 +10,7 @@
 }
 
 body {
-  background-image: url(data/scandinavia.jpg);
+  background-image: url(data/egypt.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -20,12 +20,6 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
-
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Roboto", sans-serif;
 }
 
 * {
@@ -33,7 +27,15 @@ body {
   box-sizing: border-box;
 }
 
+.block{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+}
 .quiz {
+  
   width: 600px;
   background-color: rgba(212, 212, 212, 0.6);
   padding: 32px;
