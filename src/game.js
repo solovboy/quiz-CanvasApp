@@ -76,7 +76,6 @@ const system = {
       const answerNumber = target.dataset.id;
       const isValid = checkAnswer(step, answerNumber);
       const answerClass = isValid ? "quiz__answer_valid" : "quiz__answer_invalid";
-      console.log(answerClass);
       target.classList.add(answerClass);
       isDisableButton(false);
     }
@@ -91,8 +90,10 @@ const system = {
   // Блокировка кнопки
   function isDisableButton(isDisable) {
     if (isDisable) {
+      system.answers.classList.remove("quiz__answer_button_disable")
       system.next.classList.add("quiz__button_disable");
     } else {
+      system.answers.classList.add("quiz__answer_button_disable");
       system.next.classList.remove("quiz__button_disable");
     }
   }

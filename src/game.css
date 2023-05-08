@@ -147,6 +147,10 @@ body {
   font-weight: 700;
 }
 
+.quiz__answer_button_disable {
+  pointer-events: none;
+}
+
 .quiz__button_disable {
   background: rgba(192, 147, 49, 0.5);
   pointer-events: none;
