@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="game.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
     <title>Викторина по мифологиям</title>
   </head>
   <body>
@@ -21,7 +27,7 @@
               <span id="total-questions">10</span>
             </div>
           </div>
-          <div class="quiz__question">
+          <div id="question-wrap" class="quiz__question">
             <span id="question">Как программировать?</span>
           </div>
           <div id="answers" class="quiz__answers">
@@ -31,6 +37,15 @@
             <div class="quiz__answer">Вариант 4</div>
           </div>
           <button id="next" class="quiz__button">Следующий вопрос</button>
+          <div id="result" class="quiz__result">
+            <div class="quiz__result-info">
+              <span>Верных ответов</span><br>
+              <span id="valid-answers" class="quiz__result-num">2</span>
+              <span>из</span>
+              <span id="result-total-questions" class="quiz__result-num">3</span>
+            </div>
+            <a class="btn btn-dark btn-lg" href="index.html">Играть снова</a>
+          </div>
         </div>
     </div>
     <script src="data/questions.js"></script>

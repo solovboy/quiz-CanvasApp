@@ -5,11 +5,17 @@ const system = {
       questionNumber: document.getElementById("question-number"),
       totalQuestions: document.getElementById("total-questions"),
     },
+    questionWrap: document.getElementById("question-wrap"),
     step: {
       question: document.getElementById("question"),
     },
     answers: document.getElementById("answers"),
     next: document.getElementById("next"),
+    result: {
+      resultBlock: document.getElementById("result"),
+      validAnswers: document.getElementById("valid-answers"),
+      questionsCount: document.getElementById("result-total-questions"),
+    }
   };
   
   let questionCount = data.questions.length;
@@ -25,16 +31,19 @@ const system = {
   // Отрисовка викторины
   function renderQuiz(total, step) {
     renderProgress(total, step);
+    if (total == step + 1) {
+      changeButtonText();
+    }
     if (step < total) {
       const answers = data.questions[step].answers;
       const answersHtml = buildAnswers(answers);
       renderQuestion(step);
       renderAnswers(answersHtml);
+      isDisableButton(true);
     }
-    if (total == step + 1) {
-      changeButtonText();
+    else if(step == total){
+      renderResults();
     }
-    isDisableButton(true);
   }
   renderQuiz(questionCount, step);
   
@@ -78,6 +87,7 @@ const system = {
       const answerClass = isValid ? "quiz__answer_valid" : "quiz__answer_invalid";
       target.classList.add(answerClass);
       isDisableButton(false);
+      result = isValid ? result + 1 : result
     }
   };
   
@@ -104,3 +114,13 @@ const system = {
     system.next.dataset.result = "result";
   }
   
+  //Показать результаты
+  function renderResults(){
+    system.answers.style.display = "none";
+    system.next.style.display = "none";
+    system.questionWrap.style.display = "none";
+
+    system.result.resultBlock.style.display = "block";
+    system.result.validAnswers.innerHTML = result;
+    system.result.questionsCount.innerHTML = questionCount;
+  }
