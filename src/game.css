@@ -80,7 +80,7 @@ body,.body__scn, .body__gre, .body__egpt{
   top: 0;
   bottom: 0;
   left: 0;
-  width: 30%;
+  width: 0;
   border-radius: var(--size);
   background-color: rgb(231, 148, 45);
   transition: 0.5s ease-in-out;
