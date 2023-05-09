@@ -9,8 +9,8 @@
   --radius: 18px;
 }
 
-body {
-  background-image: url(data/egypt.jpg);
+body,.body__scn, .body__gre, .body__egpt{
+  background-image: url(data/index.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -20,6 +20,15 @@ body {
   background-size: cover;
   display: flex;
   flex-direction: column;
+}
+.body__scn{
+  background-image: url(data/scandinavia.jpg);
+}
+.body__gre{
+  background-image: url(data/greece.jpg);
+}
+.body__egpt{
+  background-image: url(data/egypt.jpg);
 }
 
 * {

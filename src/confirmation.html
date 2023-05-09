@@ -17,14 +17,26 @@
     <div class="container text-center my-5">
       <div class="row">
         <div class="col-lg-5 col-md-8 col-sm-6 mx-auto font">
-          <h3 class="mb-5">Готовы ли вы отправиться в увлекательное путешествие по миру древней мифологии и проверить свои знания о богах, героях и монстрах?</h3>
-          <h3>Для вас мы подготовили 10 вопросов по выбранной мифологии. Начнем?</h3>
+          <h3 class="mb-5">
+            Готовы ли вы отправиться в увлекательное путешествие по миру древней
+            мифологии и проверить свои знания о богах, героях и монстрах?
+          </h3>
+          <h3>
+            Для вас мы подготовили 10 вопросов по выбранной мифологии. Начнем?
+          </h3>
           <div class="d-grid gap-5 col-lg-10 col-md-10 mx-auto mt-5">
             <a class="btn btn-outline-light btn-lg" href="game.html">Начать</a>
-            <a class="btn btn-outline-light btn-lg" href="index.html">Вернуться</a>
+            <a class="btn btn-outline-light btn-lg" href="index.html"
+              >Вернуться</a
+            >
           </div>
         </div>
       </div>
     </div>
+    <script>
+      var urlParams = new URLSearchParams(window.location.search);
+      var selectedTheme = urlParams.get("theme");
+      document.querySelector('a[href="game.html"]').setAttribute('href', 'game.html' + "?theme=" + selectedTheme);
+    </script>
   </body>
 </html>
