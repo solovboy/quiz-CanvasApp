@@ -114,6 +114,19 @@ body,.body__scn, .body__gre, .body__egpt{
   color: white;
   border-radius: var(--radius);
 }
+.answer-number {
+  --size: 28px;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size); 
+  border-radius: var(--size); 
+  background-color: rgb(238, 167, 81);
+  border: 2px solid #000;
+  font-size: 14;
+  color: #fff; 
+  text-align: center;
+  margin-right: 10px; 
+}
 
 .quiz__answer_valid,
 .quiz__answer_invalid {

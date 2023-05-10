@@ -92,9 +92,7 @@ function renderQuestion(step) {
 function buildAnswers(answers) {
   const answersHTML = [];
   answers.forEach((answer, idx) => {
-    const html = `<div class="quiz__answer" data-id="${
-      idx + 1
-    }">${answer}</div>`;
+    const html = `<div class="quiz__answer" data-id="${idx + 1}"><div class="answer-number">${idx + 1}</div>${answer}</div>`;
     answersHTML.push(html);
   });
   return answersHTML.join("");
