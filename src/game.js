@@ -114,6 +114,9 @@ system.answers.onclick = (event) => {
     const isValid = checkAnswer(step, answerNumber);
     const answerClass = isValid ? "quiz__answer_valid" : "quiz__answer_invalid";
     target.classList.add(answerClass);
+    if(!isValid){
+      document.querySelector(`div[data-id="${questionsTopic.questions[step].validAnswer}"]`).classList.add("quiz__answer_valid")
+    }
     isDisableButton(false);
     result = isValid ? result + 1 : result;
   }
