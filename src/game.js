@@ -16,12 +16,14 @@ const system = {
     resultBlock: document.getElementById("result"),
     validAnswers: document.getElementById("valid-answers"),
     questionsCount: document.getElementById("result-total-questions"),
+    resultComment: document.getElementById("result-comment"),
   },
 };
 
 let questionCount = 0;
 let step = 0;
 let result = 0;
+let comment = null;
 let questionsTopic = null;
 var urlParams = new URLSearchParams(window.location.search);
 var selectedTheme = urlParams.get("theme");
@@ -70,6 +72,7 @@ function renderQuiz(total, step) {
     renderAnswers(answersHtml);
     isDisableButton(true);
   } else if (step == total) {
+    getComment(result)
     renderResults();
   }
 }
@@ -126,6 +129,22 @@ function checkAnswer(step, answer) {
   return validAnswer == answer;
 }
 
+// Комментарий по результату
+function getComment(result){
+  if (result < 6){
+    comment = "Не стоит огорчаться, если результат небольшой. Это отличный повод изучить тему еще более тщательно!"
+  }
+  else if (result < 11){
+    comment = "Вы проявили неплохие знания, но есть еще, что можно изучить. Продолжайте узнавать новое!"
+  }
+  else if (result < 15){
+    comment = "Вы хорошо знаете мифологию, но есть несколько ошибок. Попробуйте еще раз!"
+  }
+  else{
+    comment = "Безупречный результат! Вы отлично разбираетесь в мифологии!"
+  }
+}
+
 // Блокировка кнопки
 function isDisableButton(isDisable) {
   if (isDisable) {
@@ -152,4 +171,5 @@ function renderResults() {
   system.result.resultBlock.style.display = "block";
   system.result.validAnswers.innerHTML = result;
   system.result.questionsCount.innerHTML = questionCount;
+  system.result.resultComment.innerHTML = comment;
 }
